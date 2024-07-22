@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-import User from "./userModel";
+
+const {ObjectId} = mongoose.Schema;
+
 
 const reviewSchema = mongoose.Schema({
     name: {
@@ -79,6 +81,12 @@ const movieSchema = mongoose.Schema({
         type: Number,
         required: true,
         default: 0,
+    },
+
+    category: {
+        type:String,
+        enum: ['Buy','Free'],
+        required: true,
     }
 
 }, {timestamps: true})

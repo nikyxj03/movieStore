@@ -1,0 +1,138 @@
+.moviepage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 80%
+}
+
+h1{
+    margin: 0;
+}
+/* 
+h4{
+    border: 1px solid;
+} */
+.headings{
+    display : flex;
+    justify-content: space-between; /* Space out children elements */
+    align-items: center; /
+}
+
+.press-1{
+    padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size for the button */
+  background-color: #E50914; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  width: 10%;
+}
+
+.press-1:hover {
+    background-color: #E50914; /* Darker background on hover */
+  }
+
+.mov{
+    display: flex;
+    flex-direction: column;
+    }
+
+.para{
+    display: flex;
+    justify-content: left;
+    
+}
+
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background:#121212;
+    padding: 20px;
+    border-radius: 8px;
+    outline: none;
+    width: 800px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .presses{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box{   
+    padding: 60px 30px 60px 30px;
+     /* border: 1px; */
+     /* border-style:ridge; */
+     background-color: rgb(35, 33, 33);
+ }
+ 
+ .fill{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     
+     
+ }
+ 
+ h2{
+     text-align: center;
+     font-size: 30px;
+     color: white;
+     margin: auto;
+     padding-bottom: 20px;
+ 
+ }
+ 
+ .line{
+     display: flex;
+     flex-direction: row;
+     padding-bottom: 20px;
+     font-size: 20px;
+     width: 650px;
+     justify-content: center;
+
+     
+ 
+ }
+ 
+ .que{
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+     
+    
+ }
+ 
+ .ans{
+     border: 0.5px solid;
+     /* margin-left: auto; */
+      display: flex;
+      padding:5px;
+      width: 55%;
+      justify-content: left;
+      height: 30px;
+ } 
+ 
+ .press{
+     margin-top: 20px;
+     background-color: #E50914 ;
+ }
+ 
