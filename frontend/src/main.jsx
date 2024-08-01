@@ -13,6 +13,9 @@ import Userpage from './pages/Userpage/Userpage.jsx'
 import AdminRoute from './pages/Admin/AdminRoute.jsx'
 import MoviesList from './pages/Admin/MoviesList/MoviesList.jsx'
 import UsersList from './pages/Admin/UsersList/UsersList.jsx'
+import Home from './pages/Home/Home.jsx'
+import MovieDetails from './pages/MovieDetails/MovieDetails.jsx'
+import Favorites from './pages/Favorites/Favorites.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +25,9 @@ const router = createBrowserRouter(
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/movies' element = {<Movies/>}/>
       <Route path = '/userpage' element = {<Userpage/>}/>
+      <Route path = '/home' element = {<Home/>}/>
+      <Route path = '/movie/:id' element = {<MovieDetails/>}/>
+      <Route path = '/favorite' element = {<Favorites/>}/>
    
       
       <Route path = '/admin' element = {<AdminRoute/>}>

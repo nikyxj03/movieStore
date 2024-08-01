@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-top: 100px;
     margin-left: 200px;
+    
     width: 80%
 }
 
@@ -40,48 +41,63 @@ h4{
     }
 
 .para{
+    flex: 1;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
+    margin-right: 20px;
+    
+
     
 }
 
-.Modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    background:#121212;
-    padding: 20px;
-    border-radius: 8px;
-    outline: none;
-    width: 800px;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .Overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-  }
+.para-1{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    text-align: left; /* Align text within the paragraph to the right */
+    margin-left: 50px;
+    margin-bottom: 10px;
+    }
+
+    .Modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        background: #121212;
+        padding: 20px;
+        border-radius: 8px;
+        outline: none;
+        width: 1600px; /* Reduced width */
+        max-width: 90%;
+        height: 600px; /* Reduced height */
+        max-height: 90%; /* Ensure it doesn't exceed the viewport */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow-y: auto; /* Enable scrolling if content exceeds height */
+    }
+    .Overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    
 
   .presses{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
   }
 
-  .box{   
-    padding: 60px 30px 60px 30px;
-     /* border: 1px; */
-     /* border-style:ridge; */
-     background-color: rgb(35, 33, 33);
- }
+  .box {   
+    padding: 20px; /* Adjusted padding */
+    background-color: rgb(35, 33, 33);
+}
  
  .fill{
      display: flex;
@@ -101,38 +117,78 @@ h4{
  
  }
  
- .line{
-     display: flex;
-     flex-direction: row;
-     padding-bottom: 20px;
-     font-size: 20px;
-     width: 650px;
-     justify-content: center;
+ .line {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+    width: 600px; /* Adjusted width */
+    justify-content: space-between;
+    gap: 40px;
+}
 
-     
- 
- }
- 
- .que{
+.que {
     display: flex;
     justify-content: left;
     font-weight: bold;
-     
-    
- }
- 
- .ans{
-     border: 0.5px solid;
-     /* margin-left: auto; */
-      display: flex;
-      padding:5px;
-      width: 55%;
-      justify-content: left;
-      height: 30px;
- } 
+    margin-right: auto;
+}
+
+.ans {
+    border: 0.5px solid;
+    display: flex;
+    padding: 5px;
+    width: 55%;
+    justify-content: right;
+    height: 30px;
+    margin-left: auto;
+}
  
  .press{
      margin-top: 20px;
      background-color: #E50914 ;
  }
- 
+
+ img {
+    width: 300px;
+    height: 400px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.im {
+    height: 350px; /* Reduced image height */
+    width: 250px; /* Adjusted image width */
+}
+
+.divide{
+    display: flex;
+}
+
+.upload{
+    display: flex;
+    flex-direction: row;
+}
+
+.st{
+display: flex;
+flex-direction: column;
+}
+
+
+.text-center{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    justify-content: left
+}

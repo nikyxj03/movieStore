@@ -4,6 +4,7 @@ import asyncHandler from "../middleware/asyncHandler.js";
 const createMovie = asyncHandler(async(req, res) => {
     const{
         title, 
+        image,
         synopsis, 
         genre, 
         language, 
@@ -12,6 +13,7 @@ const createMovie = asyncHandler(async(req, res) => {
         director, 
         price,
         category,
+        
     } = req.body
 
     if(!title || !genre || !language || !actor || !actress || !director || !price || !category){
@@ -22,6 +24,7 @@ const createMovie = asyncHandler(async(req, res) => {
     if(movieExists) res.status(400).send("Movie already exists");
     const newMovie = new Movie({
         title, 
+        image,
         synopsis, 
         genre, 
         language, 
@@ -73,9 +76,10 @@ const deleteMovieById = asyncHandler(async(req, res) => {
 const updateMovieById = asyncHandler(async(req, res) => {
     const id = req.params.id.trim()
     const movie = await Movie.findById(id)
-
+    console.log(movie);
     if(movie){
         movie.title = req.body.title || movie.title 
+        movie.image = req.body.image || movie.image
         movie.synopsis = req.body.synopsis || movie.synopsis 
         movie.genre = req.body.genre || movie.genre 
         movie.language = req.body.language || movie.language 
@@ -90,6 +94,7 @@ const updateMovieById = asyncHandler(async(req, res) => {
         res.json({
             _id : updatedMovie.id,
             title : updatedMovie.title, 
+            image : updatedMovie.image,
             synopsis: updatedMovie.synopsis, 
             genre : updatedMovie.genre, 
             language : updatedMovie.language, 
@@ -121,6 +126,28 @@ const getMovieById = asyncHandler(async(req, res) => {
     }
 })
 
+const fetchNewMovies = asyncHandler(async (req, res) => {
+    try {
+      const movies = await Movie.find().sort({ _id: -1 }).limit(5);
+      res.json(movies);
+    } catch (error) {
+      console.error(error);
+      res.status(400).json(error.message);
+    }
+  });
+
+  const fetchTopMovies = asyncHandler(async (req, res) => {
+    try {
+      const movies = await Movie.find({}).sort({ rating: -1 }).limit(4);
+      res.json(movies);
+    } catch (error) {
+      console.error(error);
+      res.status(400).json(error.message);
+    }
+  });
+  
+  
+
 
 
 export {
@@ -129,4 +156,7 @@ export {
     deleteMovieById,
     updateMovieById,
     getMovieById,
+    fetchNewMovies,
+    fetchTopMovies,
+    
 }

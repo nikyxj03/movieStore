@@ -1,0 +1,11 @@
+.page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.head{
+    font-size: 40px;
+    justify-content: center;
+    text-align: center;
+}

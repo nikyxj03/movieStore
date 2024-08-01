@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom"
 import { useState } from 'react'
 import { logout } from '../../redux/features/auth/authslice'
 import { useLogoutMutation } from '../../redux/api/usersApiSlice'
+import { FaHeart } from 'react-icons/fa'
+import FavoritesCount from '../Favorites/FavoritesCount'
 
 function Header(){
 
@@ -14,7 +16,7 @@ function Header(){
     return(
         <>
             <ul>
-                <li>Home</li>
+                <li><Link to="/home" className='link'> Home </Link></li>
                 <li><Link to="/movies" className='link'> Movies </Link></li>
                 <li>About us</li>
 
@@ -22,6 +24,11 @@ function Header(){
 
                 {userInfo ? (
                     <div className='nav-right'>
+                        <li> <Link to= '/favorite'>
+                <FaHeart size = {26}/>
+                
+                <FavoritesCount/>
+                </Link></li>
                         <li>
                             <Link className = 'link' to="/userpage">
                             <span > {userInfo.username}</span>
@@ -31,6 +38,7 @@ function Header(){
                     ):
                     (
                 <div className='nav-right'>
+                
                 <li ><Link to="/login" className='link'> Login </Link></li>
                 <li><Link to="/register" className='link'> Register </Link></li>
                 </div>

@@ -1,7 +1,12 @@
 
 import React from 'react'
-import { useDeleteMovieMutation, useGetMovieByIdMutation, useUpdateMovieMutation, useAllMoviesQuery, useCreateMovieMutation } from '../../../redux/api/movieApiSlice';
-import { Link, useParams } from 'react-router-dom';
+import { useDeleteMovieMutation, 
+  useGetMovieByIdMutation, 
+  useUpdateMovieMutation, 
+  useAllMoviesQuery, 
+  useCreateMovieMutation,
+  useUploadProductImageMutation } from '../../../redux/api/movieApiSlice';
+
 import './MoviesList.css'
 import Sidebar from "../../SideBar/Sidebar"
 import Modal from 'react-modal'
@@ -13,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 Modal.setAppElement('#root');
 
 const MoviesList = () => {
-
+  const [image, setImage] = useState("")
   const [title, setTitle] = useState("")
   const [synopsis, setSynopsis] = useState("")
   const [genre, setGenre] = useState("")
@@ -24,9 +29,11 @@ const MoviesList = () => {
   const [price, setPrice] = useState("")
   const [category, setCategory] = useState("")
   const [selectedMovie, setSelectedMovie] = useState("")
+  const [imageUrl, setImageUrl] = useState(null)
 
   const navigate = useNavigate()
 
+  const [uploadProductImage] = useUploadProductImageMutation()
   const[createMovie] = useCreateMovieMutation()
   const [updateMovie] = useUpdateMovieMutation(); 
   const [deleteMovie] = useDeleteMovieMutation()
@@ -35,12 +42,15 @@ const MoviesList = () => {
     e.preventDefault();
     
     try{
-      
+      console.log(selectedMovie)
       if(selectedMovie){
         console.log(selectedMovie._id)
+
         const res = await updateMovie({
           movieId: selectedMovie._id.trim(),
-          movieData:{title,
+          movieData:{
+          title,
+          image,
           synopsis,
           genre,
           language,
@@ -48,14 +58,15 @@ const MoviesList = () => {
           actress,
           director,
           price,
-          category,}}
+          category}}
         ).unwrap();
         toast.success('Movie updated successfully');
       } else{
-      
+      console.log(title)
       const res = await createMovie(
         { 
           title,
+          image,
           synopsis,
           genre,
           language,
@@ -67,15 +78,35 @@ const MoviesList = () => {
 
         }
           ).unwrap()
+          
           toast.success('Movie created successfully')
       }
-          navigate('/')
+          navigate('/admin/movieslist')
           closeModal()
     } catch(error){
       console.error(error)
       toast.error("Movie create failed. Try again")
     }
   }
+
+  const uploadFileHandler = async (e) => {
+    const formData = new FormData();
+    formData.append("image", e.target.files[0]);
+
+    try {
+      const res = await uploadProductImage(formData).unwrap();
+      console.log(res)
+      toast.success(res.message);
+      setImage(res.image);
+      setImageUrl(res.image);
+      console.log(imageUrl)
+      console.log(image)
+    } catch (error) {
+      toast.error(error?.data?.message || error.error);
+    }
+  };
+
+
 
   const handleDelete = async () => {
     console.log(selectedMovie._id)
@@ -124,6 +155,8 @@ const MoviesList = () => {
     setDirector(movie.director);
     setPrice(movie.price);
     setCategory(movie.category);
+    setImage(movie.image);
+    setImageUrl(movie.image);
     openModal();
   }
 
@@ -141,6 +174,8 @@ const MoviesList = () => {
     setDirector("");
     setPrice("");
     setCategory("");
+    setImage(null);
+    setImageUrl(null);
   };
 
 
@@ -176,10 +211,28 @@ const MoviesList = () => {
                 {movie?.title}    
             </h4>     
             
-
+            <div className=' details'>
             <p className='para'>
-                {movie?.synopsis}
+              <img className = "im" src={movie.image} alt={movie.name} />
             </p>
+
+          <div className='sub'> 
+            <p className='para-1'>
+                Synopsis : {movie?.synopsis}
+            </p>
+
+            <p className='para-1'>
+                Actor: {movie?.actor}
+            </p>
+            <p className='para-1'>
+                Actress: {movie?.actress}
+            </p>
+            <p className='para-1'>
+                Directed by: {movie?.director}
+            </p>
+            </div>
+
+            </div>
             <div className='presses'>
             <button className='press-1' onClick={() => openUpdateModal(movie)}>
             Update
@@ -207,6 +260,37 @@ const MoviesList = () => {
       <h2>{selectedMovie ? "Update Movie" : "Create New Movie"}</h2>
     
        <form onSubmit={handleSubmit}>
+       <div className='divide'>
+        <div className='st'>
+
+
+       
+       {imageUrl && (
+            <div className="text-center">
+              <img
+                src={imageUrl}
+                alt="product"
+                className='siz'
+              />
+            </div>
+          )}
+
+          <div className='upload'>
+            <label className='que'>
+              {image ? image.name : "Upload Image"}
+
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={uploadFileHandler}
+                className="preview"
+              />
+            </label>
+          </div>
+          </div>
+          <div>
+
           <div className='line'>
           <label className='que'>
             Title:
@@ -235,7 +319,9 @@ const MoviesList = () => {
             </label>
             <input type = "text" className="ans" value={language} onChange={(e) => setLanguage(e.target.value)}/>
           </div>
+          </div>
 
+          <div>
           <div className='line'>
           <label className='que'>
             Actor:
@@ -269,6 +355,8 @@ const MoviesList = () => {
             Category:
             </label>
             <input type = "text" className="ans" value={category} onChange={(e) => setCategory(e.target.value)}/>
+          </div>
+          </div>
           </div>
           <div className='presses'>
           <button type = "submit" className='press'>{selectedMovie ? "Update" : "Submit"}</button>

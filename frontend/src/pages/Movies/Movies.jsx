@@ -1,41 +1,39 @@
-import React from 'react'
-import { useAllMoviesQuery } from '../../redux/api/movieApiSlice'
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useAllMoviesQuery } from '../../redux/api/movieApiSlice';
+import FilterCarousel from '../FilterCarousel/FilterCarousel';
+import './Movies.css'
 
 const Movies = () => {
+  const { data: movies, isLoading, isError } = useAllMoviesQuery();
 
-    const {data: movies, isLoading, isError} = useAllMoviesQuery();
-    if (isLoading) {
-        return <div>Loading...</div>;
-      }
-    
-      if (isError) {
-        return <div>Error loading products</div>;
-    }
-    
+  const genres = ['Action', 'Comedy', 'Sci-fi', 'Thriller', 'Drama', 'Biography'];
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
+  if (isError || !movies) {
+    return <div>Error loading movies</div>;
+  }
 
   return (
-    <div>
-      <div> All Movies ({movies.length})</div>
-      <div>
-        {movies.map((movie) => (
-           
-            <div key={movie._id}>
-            <div>
-            <h5>
-                {movie?.title}    
-            </h5>     
-            </div>
-
-            <p>
-                {movie?.synopsis}
-            </p>
-            </div>
-        ))}
-      </div>
+    <div className='container'>
+      {genres.map(genre => {
+        const filteredMovies = movies.filter(movie => movie.genre === genre);
+        return (
+          <div key={genre} className='line'>
+            <div className='title'>{genre}</div>
+            {filteredMovies.length > 0 ? (
+              
+              <FilterCarousel movies={filteredMovies} />
+            ) : (
+              <p>Nothing to display</p>
+            )}
+          </div>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;

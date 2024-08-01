@@ -1,0 +1,80 @@
+/* MovieDetails.css */
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100vmax;
+        margin-left: 100px;
+        height: 100vmax;
+        margin-top: 100px;
+        
+    }
+
+  
+  .go-back-link {
+    display: block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .go-back-link:hover {
+    text-decoration: underline;
+  }
+  
+  .movie-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+    
+  }
+  
+  .movie-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .movie-info {
+    margin-top: 20px;
+    text-align: center;
+    justify-content: right;
+    margin-right:auto;
+  }
+  
+  .movie-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-info p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .movie-info h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-genre-actor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .movie-genre-actor h1 {
+    margin: 5px 0;
+  }
+  
+  .message {
+    text-align: center;
+    font-size: 18px;
+    color: #ff0000;
+  }
+  
+  .loader {
+    text-align: center;
+  }
+  
