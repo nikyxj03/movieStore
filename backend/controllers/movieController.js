@@ -138,7 +138,7 @@ const fetchNewMovies = asyncHandler(async (req, res) => {
 
   const fetchTopMovies = asyncHandler(async (req, res) => {
     try {
-      const movies = await Movie.find({}).sort({ rating: -1 }).limit(4);
+      const movies = await Movie.find({}).sort({ rating: -1 }).limit(10);
       res.json(movies);
     } catch (error) {
       console.error(error);

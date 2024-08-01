@@ -11,10 +11,16 @@
   
   .movie-image {
     width: 300px;
-    height: 400px;
+    height: 450px;
     border-radius: 0.5rem;
-    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a 3D effect */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    transition: transform 0.3s ease-in-out;
     
+  }
+
+  .movie-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
   }
   
   .movie-details {

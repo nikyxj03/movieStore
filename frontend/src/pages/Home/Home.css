@@ -5,7 +5,18 @@
 }
 
 .head{
-    font-size: 40px;
-    justify-content: center;
-    text-align: center;
+    color: #e50914; /* Netflix red */
+  font-size: 3rem; /* Large font size */
+  font-weight: bold; /* Bold font */
+  text-transform: uppercase; /* Uppercase letters */
+  text-align: center; /* Center the text */
+  margin: 2rem 0; /* Margin for spacing */
+  padding: 1rem; /* Padding for some inner space */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.carousel{
+    margin-top: 100px;
 }

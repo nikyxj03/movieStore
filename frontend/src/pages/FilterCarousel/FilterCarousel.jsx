@@ -5,74 +5,59 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import './FilterCarousel.css'
 import { Link } from "react-router-dom";
-import HeartIcon from "../HeartIcon";
+
 
 const FilterCarousel = ({movies}) => {
    
-
+    console.log({movies})
     const settings = {
         dots: false,
-        infinite: true,
-        speed: 500,
+        // infinite: true,
+        prevArrow : null,
         slidesToShow: 5,
         slidesToScroll : 1,
         arrows: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        initialSlide: -1
+        // autoplay: true,
+        // autoplaySpeed: 3000,
     }
 
     return (
-        <div className="movie-carousel-container">
-        
+
+        <div className="filter-carousel-container">
             <Slider 
             {...settings}
-            className="movie-carousel-slider"
+            className="filter-carousel-slider"
             >
                 {
-                    movies.map(
-                        ({
+                    movies.map(({
                             image,
                             _id,
                             title,
-                            
-                            
-                        }) => (
-                            <div key={_id}>
-                
-                <Link to={`/movie/${_id}`}>
-                <img
-                  src={image}
-                  alt={title}
-                  className="movie-image"
-                />
-                </Link>
-                <div className="movie-details">
-                  <div className="movie-info">
-                    <h2>{title}</h2>
-                   
+                            }) => (
+                                <>
+                            <div key={_id} className='card'>               
+                        <Link to={`/movie/${_id}`}>
+                        <img
+                        src={image}
+                        alt={title}
+                        className="filter-image"
+                        />
+                        </Link>
+                        </div>
+                        <div className="filter-info">
+                            <h2>{title}</h2>
+                        </div>
+                        </>
                     
-                   
-                  </div>
-
-                  
-
-    
-                    </div>
-                  </div>
+                      
                
              
             )
         )
     }
-            
-
-
-
-
-            </Slider>
-       
-        
-        </div>
+ </Slider>
+</div>
     )
 }
 

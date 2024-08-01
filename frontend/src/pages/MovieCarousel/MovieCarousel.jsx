@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import './MovieCarousel.css'
 import { Link } from "react-router-dom";
-import HeartIcon from "../HeartIcon";
 
 const MovieCarousel = () => {
     const {data:movies, isLoading, error} = useGetTopMoviesQuery();

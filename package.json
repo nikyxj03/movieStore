@@ -12,6 +12,9 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.6",
     "@reduxjs/toolkit": "^2.2.6",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",

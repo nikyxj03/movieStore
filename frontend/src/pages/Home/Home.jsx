@@ -4,8 +4,8 @@ import MovieCarousel from '../MovieCarousel/MovieCarousel'
 const Home = () => {
   return (
     <div className='page'>
-        <div className='head'> Welcome to Movie Mania</div>
-        <div><MovieCarousel/></div>
+        <div className='head'> Movie Mania</div>
+        <div className='carousel'><MovieCarousel/></div>
       
     </div>
   )

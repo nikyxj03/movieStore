@@ -4,7 +4,7 @@
         flex-direction: column;
         width: 100vmax;
         margin-left: 100px;
-        height: 100vmax;
+       
         margin-top: 100px;
         
     }
@@ -22,6 +22,7 @@
     text-decoration: underline;
   }
   
+
   .movie-details {
     display: flex;
     flex-direction: row;
@@ -34,13 +35,15 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+
   }
   
   .movie-info {
     margin-top: 20px;
     text-align: center;
-    justify-content: right;
-    margin-right:auto;
+    margin-left: 100px;
+    
+  
   }
   
   .movie-info h2 {
@@ -78,3 +81,57 @@
     text-align: center;
   }
   
+  .fullbox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related{
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+
+  .relatedtit{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .movie-section{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 300px;
+  }
+
+  .netflix-button {
+    background-color: #e50914; /* Netflix red */
+    color: white; /* White text */
+    font-size: 1rem; /* Button text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0.75rem 1.5rem; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    width: 200px;
+    margin-bottom: 100px;
+  }
+  
+  .netflix-button:hover {
+    background-color: #f40612; /* Slightly brighter red on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  .netflix-button:active {
+    background-color: #e50914; /* Return to original red when clicked */
+    transform: scale(1)
+  }
