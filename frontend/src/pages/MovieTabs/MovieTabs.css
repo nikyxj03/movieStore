@@ -1,0 +1,25 @@
+.review-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.que{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-left: 0px;
+    width: 300px;
+    /* border: 1px solid */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.smallbox{
+    display: flex;
+    flex-direction: row;
+}
+
+.ans{
+    margin-right: 900px;
+    width: 500px
+}

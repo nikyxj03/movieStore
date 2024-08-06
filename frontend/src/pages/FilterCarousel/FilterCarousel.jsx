@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const FilterCarousel = ({movies}) => {
    
-    console.log({movies})
+    
     const settings = {
         dots: false,
         // infinite: true,

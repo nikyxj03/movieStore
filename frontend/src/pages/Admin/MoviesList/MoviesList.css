@@ -117,24 +117,25 @@ h4{
  
  }
  
- .line {
+ .m-line {
     display: flex;
     flex-direction: row;
     padding-bottom: 15px; /* Adjusted padding */
     font-size: 16px; /* Adjusted font size */
-    width: 600px; /* Adjusted width */
+    width: 500px; /* Adjusted width */
     justify-content: space-between;
     gap: 40px;
+    padding-left: 50px;
 }
 
-.que {
+.m-que {
     display: flex;
     justify-content: left;
     font-weight: bold;
     margin-right: auto;
 }
 
-.ans {
+.m-ans {
     border: 0.5px solid;
     display: flex;
     padding: 5px;

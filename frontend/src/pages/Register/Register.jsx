@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toast } from "react-toastify"
 import { useRegisterMutation } from '../../redux/api/usersApiSlice'
 import Loader from '../../components/Loader'
-import { setCredentials } from '../../redux/features/auth/authslice'
+import { setCredentials } from '../../redux/features/auth/authSlice'
 import '../Register/Register.css'
 
 const Register = () => {
@@ -55,24 +55,24 @@ const Register = () => {
     <div className='box'>
     <h1>Register</h1>
     <form onSubmit={submitHandler} className='fill' >
-      <div className='line'>
-        <label htmlFor="name" className='que'> Username </label>
-        <input className="ans"type="text" placeholder='Enter Username' value={username} onChange={e => setUserName(e.target.value)}/>
+      <div className='r-line'>
+        <label htmlFor="name" className='r-que'> Username </label>
+        <input className="r-ans"type="text" placeholder='Enter Username' value={username} onChange={e => setUserName(e.target.value)}/>
       </div>
 
-      <div className='line'>
-        <label htmlFor="email" className='que'> Email </label>
-        <input className="ans" type="email" placeholder='Enter Email' value={email} onChange={e => setEmail(e.target.value)}/>
+      <div className='r-line'>
+        <label htmlFor="email" className='r-que'> Email </label>
+        <input className="r-ans" type="email" placeholder='Enter Email' value={email} onChange={e => setEmail(e.target.value)}/>
       </div>
 
-      <div className='line'>
-        <label htmlFor="password" className='que'>Password</label>
-        <input className="ans" type="password" placeholder='Enter Password' value={password} onChange={e => setPassword(e.target.value)}/>
+      <div className='r-line'>
+        <label htmlFor="password" className='r-que'>Password</label>
+        <input className="r-ans" type="password" placeholder='Enter Password' value={password} onChange={e => setPassword(e.target.value)}/>
       </div>
 
-      <div className='line'> 
-        <label htmlFor="consfirmPassword" className='que'> Confirm Password</label>
-        <input className="ans" type="password" placeholder='Enter Password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/>
+      <div className='r-line'> 
+        <label htmlFor="consfirmPassword" className='r-que'> Confirm Password</label>
+        <input className="r-ans" type="password" placeholder='Enter Password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/>
       </div>
 
       <button className="press" disabled = {isLoading} 

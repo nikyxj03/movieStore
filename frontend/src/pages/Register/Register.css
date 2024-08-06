@@ -23,7 +23,7 @@ h1{
 
 }
 
-.line{
+.r-line{
     display: flex;
     flex-direction: row;
     padding-bottom: 20px;
@@ -33,14 +33,14 @@ h1{
 
 }
 
-.que{
+.r-que{
     margin-top: 25px;
     margin-left: 70px;
     
     margin-right: auto;
 }
 
-.ans{
+.r-ans{
     border: 0.5px solid;
     margin-left: auto;
     margin-right: 70px;

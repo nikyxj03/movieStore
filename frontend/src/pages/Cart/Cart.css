@@ -1,0 +1,88 @@
+.cartPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.cartItem{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    width: 80vmax;
+    
+}
+
+.Shoptitle{
+    margin-top: 100px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.imagepre{
+    width: 300px;
+    height: 450px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a 3D effect */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.imagepre:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+  }
+  
+.movie-title{
+    text-decoration: none;
+    color: white;
+}
+
+.right-sec{
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.trashsec{
+    margin-left: auto;
+}
+
+.checkout-butt{
+    
+    background-color: #e50914; /* Netflix red */
+    color: white; /* White text */
+    font-size: 1rem; /* Button text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0.75rem 1.5rem; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    margin-bottom: 100px;
+    margin-top: 80px;
+    width: 800px
+
+}
+
+.bottom-sec{
+    display: flex;
+    flex-direction: column;
+}
+
+.move-right{
+    
+    margin-top: 50px;
+    
+}
+
+.h2cart, .price-sec{
+    text-align: right;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.buttsec{
+    display: flex;
+    justify-content: center;
+}

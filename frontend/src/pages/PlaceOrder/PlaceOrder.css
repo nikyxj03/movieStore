@@ -1,0 +1,70 @@
+.placepage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.Placetitle{
+    
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 100px;
+   
+}
+
+.right-s{
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+}
+
+.b-sect{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    
+    
+}
+
+.b-line{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    padding-right: 110px;
+}
+
+.b-que{
+    width: 300px
+}
+
+.checkout-button{
+    
+    background-color: #e50914; /* Netflix red */
+    color: white; /* White text */
+    font-size: 1rem; /* Button text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    padding: 0.75rem 1.5rem; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    margin-bottom: 100px;
+    margin-top: 80px;
+    width: 800px
+
+}
+
+.button-section{
+    display: flex;
+    justify-content: center;
+    margin-right: 280px;
+}

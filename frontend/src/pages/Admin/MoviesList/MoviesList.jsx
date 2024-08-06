@@ -291,70 +291,70 @@ const MoviesList = () => {
           </div>
           <div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Title:
           </label>
 
-          <input type="text"  className="ans" name="title"  value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <input type="text"  className="m-ans" name="title"  value={title} onChange={(e) => setTitle(e.target.value)}/>
           </div>
           
-          <div className='line'> 
-          <label className='que'>
+          <div className='m-line'> 
+          <label className='m-que'>
             Synopsis:
             </label>
-            <input type = "text" className="ans" value={synopsis} onChange={(e) => setSynopsis(e.target.value)}/>
+            <input type = "text" className="m-ans" value={synopsis} onChange={(e) => setSynopsis(e.target.value)}/>
           </div>
 
-          <div className='line'> 
-          <label className='que'>
+          <div className='m-line'> 
+          <label className='m-que'>
             Genre:
             </label>
-            <input type = "text"  className="ans" value={genre} onChange={(e) => setGenre(e.target.value)}/>
+            <input type = "text"  className="m-ans" value={genre} onChange={(e) => setGenre(e.target.value)}/>
           </div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Language:
             </label>
-            <input type = "text" className="ans" value={language} onChange={(e) => setLanguage(e.target.value)}/>
+            <input type = "text" className="m-ans" value={language} onChange={(e) => setLanguage(e.target.value)}/>
           </div>
           </div>
 
           <div>
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Actor:
             </label>
-            <input type = "text" className="ans" value={actor} onChange={(e) => setActor(e.target.value)}/>
+            <input type = "text" className="m-ans" value={actor} onChange={(e) => setActor(e.target.value)}/>
           </div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Actress:
             </label>
-            <input type = "text" className="ans" value={actress} onChange={(e) => setActress(e.target.value)}/>
+            <input type = "text" className="m-ans" value={actress} onChange={(e) => setActress(e.target.value)}/>
           </div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Director:
             </label>
-            <input type = "text" className="ans" value={director} onChange={(e) => setDirector(e.target.value)}/>
+            <input type = "text" className="m-ans" value={director} onChange={(e) => setDirector(e.target.value)}/>
           </div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Price:
             </label>
-            <input type = "number" className="ans" value={price} onChange={(e) => setPrice(e.target.value)}/>
+            <input type = "number" className="m-ans" value={price} onChange={(e) => setPrice(e.target.value)}/>
           </div>
 
-          <div className='line'>
-          <label className='que'>
+          <div className='m-line'>
+          <label className='m-que'>
             Category:
             </label>
-            <input type = "text" className="ans" value={category} onChange={(e) => setCategory(e.target.value)}/>
+            <input type = "text" className="m-ans" value={category} onChange={(e) => setCategory(e.target.value)}/>
           </div>
           </div>
           </div>

@@ -72,9 +72,9 @@ const movieSchema = mongoose.Schema({
     },
 
    
-    reviews: {
-        reviewSchema
-    },
+    reviews: [
+        reviewSchema]
+,
 
     price: {
         type: Number,

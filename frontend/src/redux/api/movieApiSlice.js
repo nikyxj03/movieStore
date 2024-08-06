@@ -66,7 +66,14 @@ export const movieApiSlice = apiSlice.injectEndpoints({
             keepUnusedDataFor: 5,
           }),
       
-
+          createReview: builder.mutation({
+            query: (data) => ({
+              url: `${MOVIES_URL}/${data.movieId}/reviews`,
+              method: "POST",
+              body: data,
+            }),
+          }),
+      
 
 
 
@@ -87,5 +94,6 @@ export const{
     useUploadProductImageMutation,
     useGetNewMoviesQuery,
     useGetTopMoviesQuery,
-    useGetMovieDetailsQuery
+    useGetMovieDetailsQuery,
+    useCreateReviewMutation
 } = movieApiSlice

@@ -3,7 +3,7 @@ import './Sidebar.css'
 import { Link } from 'react-router-dom'
 import { useLogoutMutation } from '../../redux/api/usersApiSlice'
 import { useSelector, useDispatch } from "react-redux"
-import { logout } from '../../redux/features/auth/authslice'
+import { logout } from '../../redux/features/auth/authSlice'
 import { useNavigate } from "react-router-dom"
 
 const Sidebar = () => {

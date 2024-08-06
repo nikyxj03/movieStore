@@ -8,6 +8,7 @@ import userRoutes from '../backend/routes/userRoutes.js'
 
 import movieRoutes from '../backend/routes/movieRoutes.js'
 import uploadRoutes from '../backend/routes/uploadRoutes.js'
+import orderRoutes from '../backend/routes/orderRoutes.js'
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -21,8 +22,8 @@ app.use(cookieParser());
 
 app.use('/api/users',userRoutes );
 app.use('/api/movies', movieRoutes);
-app.use('/api/upload', uploadRoutes)
-
+app.use('/api/upload', uploadRoutes);
+app.use('/api/orders', orderRoutes);
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname + '/uploads')))
 

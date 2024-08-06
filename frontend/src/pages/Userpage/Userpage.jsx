@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { toast } from "react-toastify"
 import Loader from "../../components/Loader"
 import { Link } from "react-router-dom"
-import { setCredentials } from '../../redux/features/auth/authslice'
+import { setCredentials } from '../../redux/features/auth/authSlice'
+import './Userpage.css'
 
 const Userpage = () => {
     const [username, setUsername] = useState('')
@@ -50,24 +51,24 @@ const Userpage = () => {
         <div className='box'>
         <h1>Update Profile</h1>
             <form onSubmit={submitHandler} className='fill'>
-                <div className='line'>
-                    <label className='que'> Name </label>
-                    <input className='ans' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <div className='user-line'>
+                    <label className='user-que'> Name </label>
+                    <input className='user-ans' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
 
-                <div className='line'>
-                    <label className='que'> Email </label>
-                    <input className='ans' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <div className='user-line'>
+                    <label className='user-que'> Email </label>
+                    <input className='user-ans' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
-                <div className='line'>
-                    <label className='que'> Password </label>
-                    <input className='ans' type="password" value={password} onChange={(e) => setPasword(e.target.value)} />
+                <div className='user-line'>
+                    <label className='user-que'> Password </label>
+                    <input className='user-ans' type="password" value={password} onChange={(e) => setPasword(e.target.value)} />
                 </div>
 
-                <div className='line'>
-                    <label className='que'> Confirm Password </label>
-                    <input className='ans' type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                <div className='user-line'>
+                    <label className='user-que'> Confirm Password </label>
+                    <input className='user-ans' type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
 
                 <div>

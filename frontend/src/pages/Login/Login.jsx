@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link,useLocation, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useLoginMutation } from '../../redux/api/usersApiSlice'
-import { setCredentials } from '../../redux/features/auth/authslice'
+import { setCredentials } from '../../redux/features/auth/authSlice'
 import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
 import '../Login/Login.css'
@@ -47,14 +47,14 @@ const Login = () => {
     <div className='box'>
         <h1>Login</h1>
       <form onSubmit={submitHandler} className='fill'>
-      <div  className='line'>
-                    <label className='que'
+      <div  className='l-line'>
+                    <label className='l-que'
                     htmlFor="email" 
                     >
                     Email Address
                     </label>
 
-                    <input className='ans' 
+                    <input className='l-ans' 
                     type="email" 
                     id = "email" 
                     
@@ -63,14 +63,14 @@ const Login = () => {
                     />
                 </div>
 
-                <div  className='line'>
-                    <label className='que'
+                <div  className='l-line'>
+                    <label className='l-que'
                     htmlFor="password" 
                     >
                     Password
                     </label>
 
-                    <input className='ans'
+                    <input className='l-ans'
                     type="password" 
                     id = "password" 
                     

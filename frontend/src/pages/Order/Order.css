@@ -1,0 +1,76 @@
+.orderpage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+
+.orderItem{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    width: 80vmax;
+    
+}
+
+.Ordertitle{
+    
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 100px;
+   
+}
+
+.imageprev{
+    width: 300px;
+    height: 450px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a 3D effect */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.imageprev:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+  }
+  
+.movie-title{
+    text-decoration: none;
+    color: white;
+}
+
+.right-sect{
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.right-section{
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+.bottom-sect{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    justify-content: center;
+    
+}
+
+.o-line{
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 520px;
+}
+
+.o-que{
+    width: 300px
+}

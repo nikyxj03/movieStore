@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from "react-router-dom"
 import { useState } from 'react'
-import { logout } from '../../redux/features/auth/authslice'
+import { logout } from '../../redux/features/auth/authSlice'
 import { useLogoutMutation } from '../../redux/api/usersApiSlice'
+import { AiOutlineShoppingCart} from 'react-icons/ai'
 
 
 function Header(){
@@ -22,6 +23,13 @@ function Header(){
 
                 {userInfo ? (
                     <div className='nav-right'>
+                        <li>
+                        <Link to= '/cart' className="flex items-center transition-transform transform hover:translate-x-2 text-white" style={{ color: 'white', textDecoration: 'none' }}>
+
+                            <AiOutlineShoppingCart className = "mr-2 mt-[3rem] text-white" size = {26}/>
+                            <span className = "hidden nav-item-name mt-[3rem] text-white"> Cart</span> {" "}
+                        </Link>
+                        </li>
                         
                         <li>
                             <Link className = 'link' to="/userpage">
